@@ -4,10 +4,25 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
     
+    <!-- Roboto font -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
+    <style>
+      .neolibri-content-font {
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.1rem;
+      }
+      .neolibri-larger-font {
+        font-size: 1.2rem;
+      }
+    </style>
     <title>NeolibriOS</title>
   </head>
   <body>
@@ -16,21 +31,24 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="#">NeolibriOS</a>
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <img src="assets/images/neolibri_logo.png" style="height: 72px; object-fit: contain; margin-right: 10px;" alt="Logo">
+          NeolibriOS
+        </a>
 
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item active">
-                <a class="nav-link" href="https://github.com/NeolibriOS/NeolibriOS/releases">Download <span class="sr-only">(current)</span></a>
+                <li class="nav-item">
+                <a class="nav-link neolibri-larger-font" href="https://github.com/NeolibriOS/NeolibriOS/releases">Download <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#">Screenshots</a>
+                <a class="nav-link neolibri-larger-font" href="#">Screenshots</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#">Wiki</a>
+                <a class="nav-link neolibri-larger-font" href="#">Wiki</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="https://github.com/NeolibriOS/NeolibriOS">Github</a>
+                <a class="nav-link neolibri-larger-font" href="https://github.com/NeolibriOS/NeolibriOS">Github</a>
                 </li>
             </ul>
         </div>
@@ -38,7 +56,7 @@
     </div>
 
     <div class="container mt-4">  <!-- Container for main content -->
-        <div class="jumbotron">  <!-- Optional: Use a jumbotron for a styled section -->
+        <div class="jumbotron neolibri-content-font">  <!-- Optional: Use a jumbotron for a styled section -->
             <ul>
             <li>NeolibriOS is tiny and fast hobby operating system for x86-compatible computers, based on <a href="https://kolibrios.org/">KolibriOS</a>.</li>
 
