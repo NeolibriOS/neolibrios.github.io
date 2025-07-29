@@ -23,15 +23,12 @@
         font-size: 1.2rem;
       }
       .carousel-img {
-        /* max-height: 700px; */
         object-fit: contain;
         margin: 0 auto;
       }
       #screenshotsCarousel {
-        /* display: none; */
         margin-bottom: 20px;
       }
-      /* Make carousel controls always visible */
       .carousel-control-prev,
       .carousel-control-next {
         opacity: 1;
@@ -41,6 +38,28 @@
         background-color: rgba(0, 0, 0, 0.5);
         border-radius: 10%;
         padding: 20px;
+      }
+      /* News section styles */
+      .news-item {
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #eee;
+      }
+      .news-date {
+        font-weight: bold;
+        color: #6c757d;
+      }
+      .news-title {
+        font-size: 1.3rem;
+        margin: 5px 0;
+        color: #007bff;
+      }
+      #newsContent {
+        display: none;
+      }
+      .active-nav-item {
+        font-weight: bold;
+        text-decoration: none;
       }
     </style>
     <title>NeolibriOS</title>
@@ -59,10 +78,13 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item">
-                <a class="nav-link neolibri-larger-font" href="https://github.com/NeolibriOS/NeolibriOS/releases">Download <span class="sr-only">(current)</span></a>
+                <a class="nav-link neolibri-larger-font" href="#news" id="newsLink">News</a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                 <a class="nav-link neolibri-larger-font" href="#">Wiki</a>
+                </li> -->
+                <li class="nav-item">
+                <a class="nav-link neolibri-larger-font" href="https://github.com/NeolibriOS/NeolibriOS/releases">Download <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                 <a class="nav-link neolibri-larger-font" href="https://github.com/NeolibriOS/NeolibriOS">Github</a>
@@ -74,7 +96,7 @@
 
     <div class="container mt-4">  <!-- Container for main content -->
         
-        <div class="jumbotron neolibri-content-font" style="padding: 1rem 1rem; margin-bottom: 1.4rem;">  <!-- Optional: Use a jumbotron for a styled section -->
+        <div class="jumbotron neolibri-content-font" style="padding: 1rem 1rem; margin-bottom: 1.4rem;" id="mainContent">
             <ul>
             <li>NeolibriOS is tiny and fast hobby operating system for x86-compatible computers, based on <a href="https://kolibrios.org/">KolibriOS</a>.</li>
 
@@ -95,11 +117,6 @@
             <div class="carousel-item">
               <img class="d-block w-100 carousel-img" src="assets/images/screenshots/screen2.png" alt="Second slide">
             </div>
-            <!-- Add more screenshots as needed -->
-            <!-- <div class="carousel-item">
-              <img class="d-block w-100 carousel-img" src="assets/images/screenshots/screen3.png" alt="Third slide">
-            </div> -->
-
           </div>
           <a class="carousel-control-prev" href="#screenshotsCarousel" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -109,6 +126,29 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
           </a>
+        </div>
+
+        <!-- News Content -->
+        <div id="newsContent">
+          <h2 class="mb-4">Latest News</h2>
+          
+          <div class="news-item">
+            <div class="news-date">July 25, 2025</div>
+            <h3 class="news-title">News 3</h3>
+            <p class="news-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl eget ultricies tincidunt, nisl nisl aliquam nisl, eget ultricies nisl nisl eget nisl. Nullam auctor, nisl eget ultricies tincidunt, nisl nisl aliquam nisl, eget ultricies nisl nisl eget nisl.</p>
+          </div>
+          
+          <div class="news-item">
+            <div class="news-date">June 15, 2025</div>
+            <h3 class="news-title">News 2</h3>
+            <p class="news-text">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+          </div>
+          
+          <div class="news-item">
+            <div class="news-date">May 5, 2025</div>
+            <h3 class="news-title">News 1</h3>
+            <p class="news-text">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl eget ultricies tincidunt, nisl nisl aliquam nisl, eget ultricies nisl nisl eget nisl.</p>
+          </div>
         </div>
 
     </div> 
@@ -124,13 +164,53 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     
-    <!-- <script>
+    <script>
       $(document).ready(function() {
-            $('html, body').animate({
-              scrollTop: $('#screenshotsCarousel').offset().top - 20
-            }, 500);
+        
+        function showNews() {
+          $('#mainContent').hide();
+          $('#screenshotsCarousel').hide();
+          $('#newsContent').show();
+          $('#newsLink').addClass('active-nav-item');
+          window.location.hash = 'news';
+        }
+        
+        function showMain() {
+          $('#mainContent').show();
+          $('#screenshotsCarousel').show();
+          $('#newsContent').hide();
+          $('#newsLink').removeClass('active-nav-item');
+          window.location.hash = '';
+        }
+        
+        // Check hash on page load
+        if (window.location.hash === '#news') {
+          showNews();
+        } else {
+          showMain();
+        }
+        
+        $('#newsLink').click(function(e) {
+          e.preventDefault();
+          showNews();
+          $('html, body').animate({ scrollTop: 0 }, 'slow');
+        });
+        
+        $('.navbar-brand').click(function(e) {
+          e.preventDefault();
+          showMain();
+          $('html, body').animate({ scrollTop: 0 }, 'slow');
+        });
+        
+        // Hash change handler
+        window.onhashchange = function() {
+          if (window.location.hash === '#news') {
+            showNews();
+          } else {
+            showMain();
+          }
+        };
       });
-    </script> -->
-
+    </script>
   </body>
 </html>
