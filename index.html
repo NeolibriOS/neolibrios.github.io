@@ -97,15 +97,10 @@
     <div class="container mt-4">  <!-- Container for main content -->
         
         <div class="jumbotron neolibri-content-font" style="padding: 1rem 1rem; margin-bottom: 1.4rem;" id="mainContent">
-            <ul>
-            <li>NeolibriOS is tiny and fast hobby operating system for x86-compatible computers, based on <a href="https://kolibrios.org/">KolibriOS</a>.</li>
-
-            <li>The project focused on fixing fundamental problems of KolibriOS and adding new important features in a more free way, without looking back at many outdated legacy stuff.</li>
-
-            <li>Its kernel, most drivers, and many programs are written entirely in <a href="https://flatassembler.net/">FASM</a> assembly language, making them very compact and lean on system resources.</li>
-
-            <li>KolibriOS itself (of which NeolibriOS is a fork), is based on <a href="https://www.menuetos.net/">MenuetOS</a>, it uses its own standards and is NOT fully POSIX or UNIX compliant.</li>
-            </ul>
+          <ul>
+            <li>NeolibriOS is an operating system project inspired by MenuetOS / KolibriOS. The focus is on design simplicity and minimalism, while maintaining portability.</li>
+            <li>The project is currently in the early stages of development and being developed in Rust language.</li>
+          </ul>
         </div>  
 
         <!-- Screenshots Carousel -->
@@ -172,7 +167,7 @@
         
         function showMain() {
           $('#mainContent').show();
-          $('#screenshotsCarousel').show();
+          $('#screenshotsCarousel').hide();//.show();
           $('#newsContent').hide();
           $('#newsLink').removeClass('active-nav-item');
           window.location.hash = '';
